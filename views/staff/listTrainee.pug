@@ -1,0 +1,15 @@
+extends ../layouts/staffMenu
+block content
+
+    h1 List Trainee with Course
+    table.table 
+        tr 
+            th Trainee Name
+            th Action
+        each view in views
+            tr
+                td= view.trainee
+                td 
+                    a.btn(href='/staff/deleteTrainee/'+ view.id) Delete 
+
+    a.btn(href = '/staff/addTraineeToCourse') Add new Trainee to Course 
