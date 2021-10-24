@@ -5,11 +5,17 @@ var Staff = require("../models/staff.model");
 
 module.exports = {
     //Account=============================================================
-    viewAccount: async function (req, res) {
-        res.render('admin/viewAccount', {
+    viewAccountAdmin: async function (req, res) {
+        res.render('admin/viewAccountAdmin', {
             accountAdmin: await Account.find({ role: 'admin' }),
-            accountStaff: await Account.find({ role: 'staff' }),
-            raccountTrainer: await Account.find({ role: 'trainer' })
+            
+            
+        });
+    },
+    viewAccountStaff: async function (req, res) {
+        res.render('admin/viewAccountStaff', {
+        accountStaff: await Account.find({ role: 'staff' }),
+          
         });
     },
 
@@ -23,7 +29,7 @@ module.exports = {
         account.save();
         const admin = new Admin(req.body);
         admin.save();
-        res.redirect('viewAccount');
+        res.redirect('viewAccountAdmin');
     },
 
     getCreateAccountStaff: function (req, res) {
@@ -35,7 +41,7 @@ module.exports = {
         account.save();
         const staff = new Staff(req.body);
         staff.save();
-        res.redirect('viewAccount');
+        res.redirect('viewAccountStaff');
     },
 
 
@@ -57,7 +63,7 @@ module.exports = {
         var username = req.params.username;
         await Account.updateOne({username: username}, req.body)
         await Admin.updateOne({username: username}, req.body)
-        res.redirect('/admin/viewAccount');
+        res.redirect('/admin/viewAccountAdmin');
 
     },
 
@@ -76,17 +82,23 @@ module.exports = {
         var username = req.params.username;
         await Account.updateOne({username: username}, req.body)
         await Staff.updateOne({username: username}, req.body)
-        res.redirect('/admin/viewAccount');
+        res.redirect('/admin/viewAccountStaff');
 
     },
-    deleteAccount: async function (req, res) {
+    deleteAccountAdmin: async function (req, res) {
         var username = req.params.username;
         await Account.deleteOne({username: username});
         await Admin.deleteOne({username: username});
-        await Staff.deleteOne({username: username});
-        res.redirect('/admin/viewAccount');
+       
+        res.redirect('/admin/viewAccountAdmin');
     },
-
+    deleteAccountStaff: async function (req, res) {
+        var username = req.params.username;
+        await Account.deleteOne({username: username});
+      
+        await Staff.deleteOne({username: username});
+        res.redirect('/admin/viewAccountStaff');
+    },
     //Home Page================================================================
     index: function (req, res) {
         res.render('admin/index');

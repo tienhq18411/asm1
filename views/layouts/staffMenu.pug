@@ -19,6 +19,7 @@ html
                     .card.ml-4.mt-4(style='width: 18rem;text-align: center;')
                      
                             li.list-group-item= account.role + ": " + account.name
+                            .br
                            
                                 a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/staff/updateInformation/' + account.username) Update Infomation
                           
@@ -26,7 +27,7 @@ html
                           
                                 a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/staff/viewCourseCategory') Manage Course Category
                           
-                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/staff/viewTrainer') Assign trainee to course      
+                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/staff/viewTrainer') Assign trainer to course      
                 .col
                     block content     
 

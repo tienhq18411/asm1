@@ -5,6 +5,8 @@ block content
                 h5.mb-0
                     p(data-toggle='collapse' data-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
                         | Trainer Account
+                        .br 
+                        a.btn(href = '/staff/createAccountTrainer') Create new Account for Trainer
               
                     table.table.mt-4 
                             tr 
@@ -19,15 +21,10 @@ block content
         
 
     
-    button.btn(type='button' data-toggle='modal' data-target='#exampleModal') Create new Account
-    // Modal
-    #exampleModal.modal(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
-        .modal-dialog(role='document')
-            .modal-content
-                .modal-header
-                    h5#exampleModalLabel.modal-title Select object to create account
-                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+    
+ 
+   
                  
-                    a.btn(href = '/staff/createAccountTrainer') Trainee
+                    
                
 

@@ -20,13 +20,8 @@ html
                     .card.ml-4.mt-4(style='width: 18rem;text-align: center;')
                         ul.list-group.list-group-flush
                             li.list-group-item=  account.role + ":" + account.name
-                            
-                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/admin/viewAccount') Manage Accounts detail
-                          
-                             
-                           
-                             
-                                    
+                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/admin/viewAccountAdmin') Manage Accounts Admin
+                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/admin/viewAccountStaff') Manage Accounts Staff                 
                 .col
                     block content   
 

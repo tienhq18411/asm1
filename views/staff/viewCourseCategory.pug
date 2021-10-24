@@ -2,6 +2,7 @@ extends ../layouts/staffMenu
 block content
 
     h1 List Course Category
+    a.btn(href = '/staff/createCourseCategory') Create new Course Category 
     table.table 
         tr 
             th Course Category Name
@@ -15,4 +16,4 @@ block content
                     a.btn(href='/staff/deleteCourseCategory/'+ category.id) Delete 
 
 
-    a.btn(href = '/staff/createCourseCategory') Create new Course Category 
+    
